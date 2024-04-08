@@ -37,12 +37,24 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'daphne',
     'django.contrib.staticfiles',
+    'channels',
     'livechat',
     'feedback',
     'recommendation',
-    'promotions'
+    'promotions',
 ]
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
+LOGIN_REDIRECT_URL = "chat-page"
+LOGOUT_REDIRECT_URL = "login-user"
+
+ASGI_APPLICATION = 'ecommerce.asgi.application'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
