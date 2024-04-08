@@ -1,8 +1,8 @@
-from . import views
-from django.contrib import admin
-from django.urls import path , include
+from django.urls import path
+from feedback import views
 
-app_name = 'feedback'
 urlpatterns = [
-    path('', views.submit_feedback , name='Feedback'),
+    path('', views.feedback_submission, name='feedback-submission'),
+    path('thanks/', views.feedback_thanks, name='feedback-thanks'),
+    # Add more URLs as needed
 ]
