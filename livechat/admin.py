@@ -1,3 +1,5 @@
 from django.contrib import admin
+from livechat.models import ChatMessage
 
-# Register your models here.
+# Register the ChatMessage model
+admin.site.register(ChatMessage)
